@@ -24,6 +24,27 @@ The pre-commit hook automatically bumps the patch version every time you commit 
 
 
 
+## Setup on New Computer
+
+### Quick Setup (Recommended)
+```bash
+# 1. Clone the repository
+git clone <your-repo-url>
+cd py-claude-marketplace
+
+# 2. Run the setup script
+./install-hooks.sh
+
+# 3. Done! Hook is now active
+```
+
+### Manual Setup
+```bash
+# Copy hook from repository to .git/hooks/
+cp hooks/pre-commit .git/hooks/pre-commit
+chmod +x .git/hooks/pre-commit
+```
+
 ## Usage Examples
 
 ### Automatic (Pre-commit Hook)
@@ -31,7 +52,7 @@ The pre-commit hook automatically bumps the patch version every time you commit 
 # Make some changes to plugin files
 git add py-plugin/skills/new-skill/SKILL.md
 git commit -m "Add new skill"
-# Version automatically bumped from 1.0.5 to 1.0.6
+# Version automatically bumped from 1.0.7 to 1.0.8
 ```
 
 ### Skip Automatic Bump
@@ -44,9 +65,12 @@ git commit -m "Update documentation [skip version bump]"
 
 ```
 py-claude-marketplace/
+├── hooks/
+│   ├── pre-commit                   # 🔥 Version-controlled hook
+│   └── README.md                    # Setup documentation
 ├── .git/hooks/
-│   ├── pre-commit                   # Self-contained shell hook (ACTIVE)
-│   └── README.md                    # Hook documentation  
+│   └── pre-commit                   # ← Installed copy (not in repo)
+├── install-hooks.sh                 # 🚀 Quick setup script
 └── py-plugin/.claude-plugin/
     └── plugin.json                  # Plugin configuration with version
 ```
