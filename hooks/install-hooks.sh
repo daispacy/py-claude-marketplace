@@ -1,7 +1,6 @@
 #!/bin/bash
 
 # install-hooks.sh - Quick setup script for Git hooks
-
 set -e
 
 echo "🔧 Installing Git hooks for py-claude-marketplace..."
