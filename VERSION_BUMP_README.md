@@ -1,51 +1,27 @@
 # Automated Version Bumping
 
-This repository includes several automated solutions for version bumping in `plugin.json`.
+This repository uses self-contained Git hooks for automatic version bumping in `plugin.json`.
 
 ## Current Version
-The current version in `py-plugin/.claude-plugin/plugin.json` is: **1.0.3**
+The current version in `py-plugin/.claude-plugin/plugin.json` is: **1.0.5**
 
 ## Available Solutions
 
-### 1. 🔄 Automatic Pre-commit Hook (Recommended)
+### 1. 🔄 Self-Contained Pre-commit Hook (Active)
 
 The pre-commit hook automatically bumps the patch version every time you commit changes to plugin-related files.
 
 **Features:**
-- ✅ Automatically increments patch version (1.0.3 → 1.0.4)
+- ✅ Automatically increments patch version (1.0.5 → 1.0.6)
 - ✅ Only runs when plugin-related files are modified
 - ✅ Skips version bump for merge commits
 - ✅ Automatically stages the updated `plugin.json`
+- ✅ **Self-contained** - no external files needed
+- ✅ **Cross-platform** - works on any computer
 
-**Already installed and active!** The hook is located at `.git/hooks/pre-commit`
+**Currently active!** The hook is located at `.git/hooks/pre-commit`
 
-### 2. 🔧 Manual Version Bump Scripts
-
-#### Python Script
-```bash
-# Bump patch version (default)
-python3 scripts/bump_version.py
-
-# Bump minor version (1.0.3 → 1.1.0)
-python3 scripts/bump_version.py minor
-
-# Bump major version (1.0.3 → 2.0.0)
-python3 scripts/bump_version.py major
-```
-
-#### Shell Script (Interactive)
-```bash
-# Bump patch version (default)
-./scripts/bump_version.sh
-
-# Bump specific version type
-./scripts/bump_version.sh minor
-./scripts/bump_version.sh major
-```
-
-The shell script will ask if you want to commit the changes automatically.
-
-### 3. 🚀 GitHub Actions Workflow
+### 2. 🚀 GitHub Actions Workflow
 
 The GitHub Actions workflow provides automated version bumping on push to main branch.
 
@@ -65,18 +41,7 @@ The GitHub Actions workflow provides automated version bumping on push to main b
 # Make some changes to plugin files
 git add py-plugin/skills/new-skill/SKILL.md
 git commit -m "Add new skill"
-# Version automatically bumped from 1.0.3 to 1.0.4
-```
-
-### Manual Bump
-```bash
-# Using Python script
-python3 scripts/bump_version.py minor
-# Version: 1.0.3 → 1.1.0
-
-# Using shell script (interactive)
-./scripts/bump_version.sh patch
-# Asks if you want to commit the change
+# Version automatically bumped from 1.0.5 to 1.0.6
 ```
 
 ### Skip Automatic Bump
@@ -90,12 +55,11 @@ git commit -m "Update documentation [skip version bump]"
 ```
 py-claude-marketplace/
 ├── .git/hooks/
-│   └── pre-commit                    # Automatic pre-commit hook
+│   ├── pre-commit                   # Self-contained Python hook (ACTIVE)
+│   ├── pre-commit-shell            # Self-contained shell hook (BACKUP)
+│   └── README.md                    # Hook documentation
 ├── .github/workflows/
 │   └── version-bump.yml             # GitHub Actions workflow
-├── scripts/
-│   ├── bump_version.py              # Python version bump script
-│   └── bump_version.sh              # Shell version bump script
 └── py-plugin/.claude-plugin/
     └── plugin.json                  # Plugin configuration with version
 ```
@@ -119,13 +83,15 @@ ls -la .git/hooks/pre-commit
 chmod +x .git/hooks/pre-commit
 ```
 
-### Manual Script Errors
+### Hook Version Issues
 ```bash
-# Check Python version (requires Python 3.6+)
-python3 --version
+# Switch to shell version if Python version fails
+mv .git/hooks/pre-commit .git/hooks/pre-commit-python
+mv .git/hooks/pre-commit-shell .git/hooks/pre-commit
 
-# Test the script
-python3 scripts/bump_version.py --help
+# Switch back to Python version
+mv .git/hooks/pre-commit .git/hooks/pre-commit-shell  
+mv .git/hooks/pre-commit-python .git/hooks/pre-commit
 ```
 
 ### GitHub Actions Not Triggering
@@ -133,11 +99,14 @@ python3 scripts/bump_version.py --help
 - Check that changes are pushed to the `main` branch
 - Verify that plugin files are actually modified
 
+## Hook Versions
+
+Choose the hook version that works best for your environment:
+
+- **Python Hook** (default): `.git/hooks/pre-commit` - Better JSON handling
+- **Shell Hook** (backup): `.git/hooks/pre-commit-shell` - No Python required  
+- **GitHub Actions**: `.github/workflows/version-bump.yml` - Remote automation
+
 ## Configuration
 
-You can modify the behavior by editing:
-
-- **Pre-commit hook**: `.git/hooks/pre-commit`
-- **Python script**: `scripts/bump_version.py`
-- **Shell script**: `scripts/bump_version.sh`
-- **GitHub Actions**: `.github/workflows/version-bump.yml`
+All version bumping logic is self-contained in the Git hooks. No external configuration needed!
