@@ -472,7 +472,7 @@ xcrun simctl list devices available | grep "iPhone 17 Pro"
 # Output: iPhone 17 Pro (F464E766-555C-4B95-B8CC-763702A70791) (Booted)
 
 # Use UUID in command
-xcrun xctrace record --template "App Launch" --device F464E766-555C-4B95-B8CC-763702A70791 ...
+xcrun xctrace record --template "App Launch" --device F464E766-555C-4B95-B8CC-763702A70791 ....
 ```
 
 #### 2. ❌ "Provided process is ambiguous"
