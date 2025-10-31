@@ -121,8 +121,36 @@ mkdir -p .claude/skills/[auto-generated-name]
 ```
 
 **Auto-generate files:**
-1. `SKILL.md` - Complete skill with frontmatter
-2. `examples.md` - If helpful for complex skills (optional)
+
+1. **`SKILL.md`** (Required, Concise)
+   - Frontmatter (name, description, allowed-tools)
+   - When to Activate (trigger phrases)
+   - Process steps (core workflow)
+   - Output format (template structure)
+   - Keep under 150 lines - core instructions only!
+
+2. **`templates.md`** (Optional, for code/structure templates)
+   - Code templates
+   - File structure templates
+   - Boilerplate examples
+   - Use when skill generates code or files
+
+3. **`examples.md`** (Optional, for detailed examples)
+   - Real-world usage examples
+   - Before/after code samples
+   - Complex scenarios
+   - Use when skill needs detailed guidance
+
+4. **`standards.md`** (Optional, for rules/guidelines)
+   - Coding standards
+   - Naming conventions
+   - Best practices
+   - Reference documentation
+   - Use when skill enforces specific rules
+
+**Separation principle:**
+- SKILL.md = Concise instructions (what to do, how to do it)
+- Separate files = Supporting details (templates, examples, references)
 
 **Auto-validate:**
 - ✓ Valid YAML frontmatter with `---` delimiters
@@ -130,7 +158,8 @@ mkdir -p .claude/skills/[auto-generated-name]
 - ✓ Description specific with quoted triggers
 - ✓ Tools appropriate for task type
 - ✓ Process steps clear and actionable
-- ✓ Output format template included
+- ✓ SKILL.md concise (under 150 lines)
+- ✓ Extra content moved to separate files
 
 ### Step 5: Present and Test
 
@@ -211,10 +240,15 @@ After auto-generating skill, show:
 ```markdown
 ✅ Skill Created: [name]
 
-📁 Location: `.claude/skills/[name]/SKILL.md`
+📁 Files created:
+  - `.claude/skills/[name]/SKILL.md` (core instructions)
+  - `.claude/skills/[name]/templates.md` (if applicable)
+  - `.claude/skills/[name]/examples.md` (if applicable)
+  - `.claude/skills/[name]/standards.md` (if applicable)
 
 🔧 Type: [task-type]
 🛠️  Tools: [tool-list]
+📄 Lines: [line-count] (SKILL.md is concise!)
 
 🎯 Test with these phrases:
 - "[natural trigger 1]"
@@ -243,14 +277,24 @@ Use these for generation (don't show to user):
 
 ## Important Rules
 
+### Auto-Generation
 - **Auto-generate** skill name from request (lowercase-with-hyphens)
 - **Auto-detect** task type to select template and tools
 - **Auto-extract** trigger phrases from user's language
 - **Auto-create** description with specific triggers in quotes
 - **Auto-select** appropriate tools based on task type
+
+### Quality Standards
 - **No generic names**: Always use specific technology/action names
 - **No vague descriptions**: Always include specific triggers and file types
 - **Valid YAML**: Always use `---` delimiters and proper frontmatter format
+
+### File Organization
+- **SKILL.md must be concise**: Under 150 lines, core instructions only
+- **Separate templates**: Move code templates to `templates.md`
+- **Separate examples**: Move detailed examples to `examples.md`
+- **Separate standards**: Move rules/guidelines to `standards.md`
+- **Clear separation**: Instructions in SKILL.md, details in other files
 
 ---
 
