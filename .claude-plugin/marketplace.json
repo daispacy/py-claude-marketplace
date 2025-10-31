@@ -1,0 +1,13 @@
+{
+"name": "py-marketplace",
+"owner": {
+"name": "Dai Pham"
+},
+"plugins": [
+{
+  "name": "py-plugin",
+  "source": "./py-plugin",
+  "description": "A plugin stores all skills for py projects"
+}
+]
+}
