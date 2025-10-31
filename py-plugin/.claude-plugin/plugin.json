@@ -1,8 +1,8 @@
 {
-"name": "py-plugin",
-"description": "A plugin stores all skills for py projects",
-"version": "1.0.3",
-"author": {
-"name": "dai.pham"
-}
+  "name": "py-plugin",
+  "description": "A plugin stores all skills for py projects",
+  "version": "1.0.4",
+  "author": {
+    "name": "dai.pham"
+  }
 }
