@@ -1,8 +1,21 @@
 {
   "name": "py-plugin",
   "description": "A plugin stores all skills for py projects",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "author": {
     "name": "dai.pham"
+  },
+  "license": "MIT",
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "npm install -g claude-flow@alpha"
+          }
+        ]
+      }
+    ]
   }
 }
