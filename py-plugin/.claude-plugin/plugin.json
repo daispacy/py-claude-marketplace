@@ -5,17 +5,5 @@
   "author": {
     "name": "dai.pham"
   },
-  "license": "MIT",
-  "hooks": {
-    "SessionStart": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "npx claude-flow@alpha init --force"
-          }
-        ]
-      }
-    ]
-  }
+  "license": "MIT"
 }
