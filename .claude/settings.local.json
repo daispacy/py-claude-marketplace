@@ -1,7 +1,8 @@
 {
   "permissions": {
     "allow": [
-      "Skill(py-plugin:skill-builder)"
+      "Skill(py-plugin:skill-builder)",
+      "WebFetch(domain:code.visualstudio.com)"
     ],
     "deny": [],
     "ask": []
