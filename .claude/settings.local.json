@@ -2,7 +2,8 @@
   "permissions": {
     "allow": [
       "Skill(py-plugin:skill-builder)",
-      "WebFetch(domain:code.visualstudio.com)"
+      "WebFetch(domain:code.visualstudio.com)",
+      "Bash(grep:*)"
     ],
     "deny": [],
     "ask": []

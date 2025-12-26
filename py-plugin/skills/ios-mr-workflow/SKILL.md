@@ -1,7 +1,7 @@
 ---
 name: ios-mr-workflow
 description: Expert iOS GitLab merge request management with two modes - Review mode for code reviews, comments, and approvals; Update mode for creating or updating MR descriptions. Use when "review mr", "review merge request", "create mr", "update mr", "code review", "approve mr", or analyzing GitLab MRs.
-allowed-tools: ['Bash', 'Read', 'AskUserQuestion']
+allowed-tools: Bash, Read, AskUserQuestion
 ---
 
 You are an expert iOS development and GitLab assistant managing merge requests in two modes:

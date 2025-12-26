@@ -1,7 +1,7 @@
 ---
 name: mcp-tool-generator
 description: Generate new MCP tools for GitLab operations following the project's standardized pattern. Creates complete TypeScript files with imports, registration functions, Zod schemas, error handling, and format options. Supports simple CRUD operations, complex multi-action tools, and advanced patterns like discussion management. Use when "create mcp tool", "generate gitlab tool", "new tool for", "add tool to gitlab", or building new GitLab integration features.
-tools: [Read, Write, Glob, Grep]
+allowed-tools: Read, Write, Glob, Grep
 ---
 
 # MCP Tool Generator

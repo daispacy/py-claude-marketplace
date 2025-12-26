@@ -1,11 +1,7 @@
 ---
 name: ios-generate-unit-tests
 description: Generate comprehensive unit tests for iOS RxSwift project files (ViewModels, UseCases, Services). Creates complete test files with nested mocks, RxTest patterns, session error handling, and memory leak tests. Use when "generate unit tests", "write tests for", "create unit tests", "add tests for", or analyzing Swift files in PayooMerchant project.
-allowed-tools:
-  - Read
-  - Write
-  - Glob
-  - Grep
+allowed-tools: Read, Write, Glob, Grep
 ---
 
 # iOS RxSwift Unit Test Generator

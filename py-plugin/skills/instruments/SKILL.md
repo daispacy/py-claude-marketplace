@@ -1,6 +1,7 @@
 ---
 name: ios-instruments-performance-cli
 description: Use Xcode Instruments command line tools to analyze iOS app performance, detect memory leaks, optimize launch times, monitor CPU usage, and identify performance bottlenecks for the iOS project
+allowed-tools: Bash, Read, Write
 ---
 
 # iOS Instruments Performance CLI

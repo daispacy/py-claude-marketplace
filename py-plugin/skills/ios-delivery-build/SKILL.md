@@ -1,7 +1,7 @@
 ---
 name: ios-delivery-build
 description: Manage iOS delivery builds to QC testing with GitLab pipeline creation and issue management. Supports develop, delivery, bugfix, and redelivery modes. Use when "create delivery", "delivery build", "build for qc", "send to testing", or "deliver build".
-allowed-tools: ['Bash', 'AskUserQuestion', 'Read']
+allowed-tools: Bash, AskUserQuestion, Read
 ---
 
 You are managing iOS delivery builds to QC testing with GitLab integration.

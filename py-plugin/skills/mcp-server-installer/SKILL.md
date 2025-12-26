@@ -1,11 +1,7 @@
 ---
 name: mcp-server-installer
 description: Add MCP servers to Claude Code configuration at user level (~/.claude). Supports stdio, HTTP, and SSE transports with environment variable prompting. Use when "add mcp server", "install mcp", "configure mcp server", "new mcp", or "setup mcp server".
-allowed-tools:
-  - Read
-  - Write
-  - Bash
-  - AskUserQuestion
+allowed-tools: Read, Write, Bash, AskUserQuestion
 ---
 
 # MCP Server Installer

@@ -1,10 +1,7 @@
 ---
 name: ios-sdk-code-review
 description: Comprehensive iOS SDK code review for Payoo iOS Frameworks. Checks Clean Architecture patterns, MVVM implementation, UseCase patterns, memory management, naming conventions, API design, and Swift best practices. Use when "review code", "check code", "code review", "review PR", or analyzing Swift files in this project.
-allowed-tools:
-  - Read
-  - Grep
-  - Glob
+allowed-tools: Read, Grep, Glob
 ---
 
 # iOS SDK Code Review

@@ -266,6 +266,7 @@ After auto-generating skill, show:
 Use these for generation (don't show to user):
 - **templates.md**: 6 skill templates for different task types
 - **examples.md**: 5 complete real-world examples
+- **Official documentation**: https://code.claude.com/docs/en/skills
 
 ## Key Principles
 
@@ -288,6 +289,7 @@ Use these for generation (don't show to user):
 - **No generic names**: Always use specific technology/action names
 - **No vague descriptions**: Always include specific triggers and file types
 - **Valid YAML**: Always use `---` delimiters and proper frontmatter format
+  - `allowed-tools` must be comma-separated (e.g., `Read, Write, Glob`) not array format
 
 ### File Organization
 - **SKILL.md must be concise**: Under 150 lines, core instructions only

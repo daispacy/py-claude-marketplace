@@ -1,12 +1,7 @@
 ---
 name: copilot-agent-builder
 description: Generate custom GitHub Copilot agents (.agent.md files) for VS Code with proper YAML frontmatter, tools configuration, and handoff workflows. Use when "create copilot agent", "generate github copilot agent", "new copilot agent for", "make a copilot agent", or "build copilot agent".
-allowed-tools:
-  - Read
-  - Write
-  - Glob
-  - Bash
-  - AskUserQuestion
+allowed-tools: Read, Write, Glob, Bash, AskUserQuestion
 ---
 
 # GitHub Copilot Agent Builder
