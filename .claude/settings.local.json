@@ -3,7 +3,15 @@
     "allow": [
       "Skill(py-plugin:skill-builder)",
       "WebFetch(domain:code.visualstudio.com)",
-      "Bash(grep:*)"
+      "Bash(grep:*)",
+      "Bash(skills-ref py-plugin/skills)",
+      "Bash(skills-ref:*)",
+      "Bash(for skill_dir in py-plugin/skills/*/)",
+      "Bash(do)",
+      "Bash(if [ -d \"$skill_dir\" ])",
+      "Bash(then)",
+      "Bash(fi)",
+      "Bash(done)"
     ],
     "deny": [],
     "ask": []

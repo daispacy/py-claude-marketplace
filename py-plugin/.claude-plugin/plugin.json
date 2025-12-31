@@ -1,7 +1,7 @@
 {
   "name": "py-plugin",
   "description": "A plugin stores all skills for py projects",
-  "version": "1.0.20",
+  "version": "1.0.21",
   "author": {
     "name": "dai.pham"
   },
